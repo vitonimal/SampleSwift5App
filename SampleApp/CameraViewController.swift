@@ -12,6 +12,7 @@ import AVFoundation
 class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 
     @IBOutlet weak var photoPreview: UIImageView!
+    @IBOutlet weak var imgContainer: UIImageView!
     var captureSession:AVCaptureSession?
     var previewLayer:CALayer!
     var captureDevice:AVCaptureDevice!
@@ -24,6 +25,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     
     
     func prepareCamera() {
+        captureSession = AVCaptureSession()
         captureSession?.sessionPreset = AVCaptureSession.Preset.photo
         let availableDevices = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back).devices
         
@@ -41,10 +43,9 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         } catch {
             print(error.localizedDescription)
         }
-        
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
         self.view.layer.addSublayer(previewLayer)
-        previewLayer.frame = self.view.layer.frame
+        previewLayer.frame = imgContainer.frame
         
         captureSession?.startRunning()
         
@@ -68,7 +69,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
             snap = false
             if let image = self.getImageFromSampleBuffer(buffer: sampleBuffer) {
                 DispatchQueue.main.async {
-                    //let photoVC = UIStoryboard(name: "Main")
+                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
                 }
             }
         }
