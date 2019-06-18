@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0330920E22B917F6002A7FC6 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330920D22B917F6002A7FC6 /* PhoneViewController.swift */; };
 		0330921022B91CEE002A7FC6 /* SMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330920F22B91CEE002A7FC6 /* SMSViewController.swift */; };
-		0330921222B94B44002A7FC6 /* DBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330921122B94B44002A7FC6 /* DBViewController.swift */; };
 		0330921422B979C0002A7FC6 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330921322B979C0002A7FC6 /* AddTodoViewController.swift */; };
 		0330921622B97D89002A7FC6 /* TodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330921522B97D89002A7FC6 /* TodosViewController.swift */; };
 		03A7CA8C22B7E12E00A45E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7CA8B22B7E12E00A45E2B /* AppDelegate.swift */; };
@@ -20,12 +19,12 @@
 		03A7CA9E22B7EE8600A45E2B /* GeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7CA9D22B7EE8600A45E2B /* GeoViewController.swift */; };
 		03A7CAA122B7F0D800A45E2B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A7CAA022B7F0D800A45E2B /* CoreLocation.framework */; };
 		03A7CAA322B80A5300A45E2B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7CAA222B80A5300A45E2B /* CameraViewController.swift */; };
+		CE00BE5822B9ACE400352783 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00BE5722B9ACE400352783 /* DBService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0330920D22B917F6002A7FC6 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		0330920F22B91CEE002A7FC6 /* SMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSViewController.swift; sourceTree = "<group>"; };
-		0330921122B94B44002A7FC6 /* DBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBViewController.swift; sourceTree = "<group>"; };
 		0330921322B979C0002A7FC6 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 		0330921522B97D89002A7FC6 /* TodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewController.swift; sourceTree = "<group>"; };
 		03A7CA8822B7E12E00A45E2B /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +37,7 @@
 		03A7CA9D22B7EE8600A45E2B /* GeoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoViewController.swift; sourceTree = "<group>"; };
 		03A7CAA022B7F0D800A45E2B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		03A7CAA222B80A5300A45E2B /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		CE00BE5722B9ACE400352783 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,13 +73,13 @@
 			isa = PBXGroup;
 			children = (
 				0330921322B979C0002A7FC6 /* AddTodoViewController.swift */,
+				CE00BE5722B9ACE400352783 /* DBService.swift */,
 				0330920D22B917F6002A7FC6 /* PhoneViewController.swift */,
 				0330920F22B91CEE002A7FC6 /* SMSViewController.swift */,
 				03A7CA8B22B7E12E00A45E2B /* AppDelegate.swift */,
 				03A7CA8D22B7E12E00A45E2B /* ViewController.swift */,
 				03A7CA8F22B7E12E00A45E2B /* Main.storyboard */,
 				0330921522B97D89002A7FC6 /* TodosViewController.swift */,
-				0330921122B94B44002A7FC6 /* DBViewController.swift */,
 				03A7CA9222B7E12F00A45E2B /* Assets.xcassets */,
 				03A7CA9422B7E12F00A45E2B /* LaunchScreen.storyboard */,
 				03A7CA9722B7E12F00A45E2B /* Info.plist */,
@@ -169,12 +169,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				03A7CA8E22B7E12E00A45E2B /* ViewController.swift in Sources */,
+				CE00BE5822B9ACE400352783 /* DBService.swift in Sources */,
 				0330920E22B917F6002A7FC6 /* PhoneViewController.swift in Sources */,
 				0330921022B91CEE002A7FC6 /* SMSViewController.swift in Sources */,
 				03A7CAA322B80A5300A45E2B /* CameraViewController.swift in Sources */,
 				0330921622B97D89002A7FC6 /* TodosViewController.swift in Sources */,
 				0330921422B979C0002A7FC6 /* AddTodoViewController.swift in Sources */,
-				0330921222B94B44002A7FC6 /* DBViewController.swift in Sources */,
 				03A7CA8C22B7E12E00A45E2B /* AppDelegate.swift in Sources */,
 				03A7CA9E22B7EE8600A45E2B /* GeoViewController.swift in Sources */,
 			);

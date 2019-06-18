@@ -6,6 +6,9 @@
 //  Copyright © 2019 AccuV. All rights reserved.
 //
 
+
+// TODO Delete and to be replaced with TodoViewController
+
 import UIKit
 import SQLite3
 
@@ -18,7 +21,6 @@ class DBViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupDB()
     }
     
     @IBAction func addTodo(_ sender: Any) {
@@ -45,25 +47,6 @@ class DBViewController: UIViewController {
         
     }
     
-    func setupDB() {
-        let fileUrl = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("todos.sqlite")
-        
-        if sqlite3_open(fileUrl.path, &db) != SQLITE_OK {
-            print("error opening db")
-            return
-        }
-        
-        let createTableQuery = "CREATE TABLE IF NOT EXISTS todos (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, completed BIT)"
-        
-        if sqlite3_exec(db, createTableQuery, nil, nil, nil) != SQLITE_OK {
-            print("error creating table")
-            return
-        }
-        
-        
-        
-        
-    }
 
     /*
     // MARK: - Navigation

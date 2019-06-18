@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="196.09375" y="-585.9375"/>
         </scene>
-        <!--All tasks-->
+        <!--Todos-->
         <scene sceneID="rkA-4J-T29">
             <objects>
                 <tableViewController id="FK7-ph-gnF" customClass="TodosViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,7 +86,12 @@
                             <outlet property="delegate" destination="FK7-ph-gnF" id="zBR-gO-Iv9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All tasks" id="duL-ho-83e">
+                    <navigationItem key="navigationItem" title="Todos" id="duL-ho-83e">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="8Bz-5k-84Q">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="MOf-k3-5em"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="add" id="gCg-yd-0j9">
                             <connections>
                                 <segue destination="7lW-k3-VhP" kind="presentation" id="VOc-0z-fVG"/>
@@ -481,6 +486,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="hUp-Rl-aSX"/>
-        <segue reference="VOc-0z-fVG"/>
+        <segue reference="HCu-ii-LPn"/>
     </inferredMetricsTieBreakers>
 </document>
