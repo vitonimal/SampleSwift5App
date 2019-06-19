@@ -17,8 +17,9 @@ class AddTodoViewController: UIViewController {
 
     @IBAction func add(_ sender: Any) {
         dbService.add(withTitle: titleContent.text)
+        cancel()
     }
-    @IBAction func cancel(_ sender: Any) {
+    @IBAction func cancel() {
         dismiss(animated: true, completion: nil)
     }
 }

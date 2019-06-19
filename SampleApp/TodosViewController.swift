@@ -50,7 +50,7 @@ class TodosViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            print("lol")
+            print("to be deleted")
         }
     }
 
