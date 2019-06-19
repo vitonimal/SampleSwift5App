@@ -113,8 +113,11 @@ class DBService {
     func deleteWithId(_ id:Int) {
         let query = "DELETE FROM todos WHERE id=\(id)"
         var deleteStatement:OpaquePointer? = nil
-        if sqlite3_prepare(db, query, -1, &deleteStatement, nil) == SQLITE_OK {
-            //...
+        if sqlite3_prepare(db, query, -1, &deleteStatement, nil) != SQLITE_OK {
+            print("failed to prepare delete query")
+        }
+        if sqlite3_step(deleteStatement) == SQLITE_DONE {
+            print("todo deleted successfully")
         }
     }
     

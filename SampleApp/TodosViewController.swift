@@ -30,8 +30,7 @@ class TodosViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        todos = dbService.get()
-        self.tableView.reloadData()
+        refreshTable()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,8 +53,14 @@ class TodosViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-//            dbService.
+            dbService.deleteWithId(todos[indexPath.row].id)
+            refreshTable()
         }
+    }
+    
+    private func refreshTable() {
+        todos = dbService.get()
+        self.tableView.reloadData()
     }
 
 }
