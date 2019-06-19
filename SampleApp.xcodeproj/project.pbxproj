@@ -13,6 +13,9 @@
 		0330921622B97D89002A7FC6 /* TodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330921522B97D89002A7FC6 /* TodosViewController.swift */; };
 		0331CE1B22BA7E7000D67FC9 /* OIDCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0331CE1A22BA7E7000D67FC9 /* OIDCViewController.swift */; };
 		03401DF022BABC2F003A4AF8 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 03401DEF22BABC2F003A4AF8 /* SupportingFiles */; };
+		03401DF222BAC914003A4AF8 /* PushTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03401DF122BAC914003A4AF8 /* PushTemplate.swift */; };
+		03401DF422BAD299003A4AF8 /* DeviceInstallation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03401DF322BAD299003A4AF8 /* DeviceInstallation.swift */; };
+		03401DF622BAD2D8003A4AF8 /* TokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03401DF522BAD2D8003A4AF8 /* TokenData.swift */; };
 		03A7CA8C22B7E12E00A45E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7CA8B22B7E12E00A45E2B /* AppDelegate.swift */; };
 		03A7CA8E22B7E12E00A45E2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7CA8D22B7E12E00A45E2B /* ViewController.swift */; };
 		03A7CA9122B7E12E00A45E2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A7CA8F22B7E12E00A45E2B /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 		0330921522B97D89002A7FC6 /* TodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewController.swift; sourceTree = "<group>"; };
 		0331CE1A22BA7E7000D67FC9 /* OIDCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OIDCViewController.swift; sourceTree = "<group>"; };
 		03401DEF22BABC2F003A4AF8 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
+		03401DF122BAC914003A4AF8 /* PushTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTemplate.swift; sourceTree = "<group>"; };
+		03401DF322BAD299003A4AF8 /* DeviceInstallation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInstallation.swift; sourceTree = "<group>"; };
+		03401DF522BAD2D8003A4AF8 /* TokenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenData.swift; sourceTree = "<group>"; };
 		03A7CA8822B7E12E00A45E2B /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03A7CA8B22B7E12E00A45E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03A7CA8D22B7E12E00A45E2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 				0330920D22B917F6002A7FC6 /* PhoneViewController.swift */,
 				0330920F22B91CEE002A7FC6 /* SMSViewController.swift */,
 				03A7CA8B22B7E12E00A45E2B /* AppDelegate.swift */,
+				03401DF122BAC914003A4AF8 /* PushTemplate.swift */,
 				03A7CA8D22B7E12E00A45E2B /* ViewController.swift */,
 				03A7CA8F22B7E12E00A45E2B /* Main.storyboard */,
 				0330921522B97D89002A7FC6 /* TodosViewController.swift */,
@@ -99,6 +106,8 @@
 				03A7CA9722B7E12F00A45E2B /* Info.plist */,
 				03A7CA9D22B7EE8600A45E2B /* GeoViewController.swift */,
 				03A7CAA222B80A5300A45E2B /* CameraViewController.swift */,
+				03401DF322BAD299003A4AF8 /* DeviceInstallation.swift */,
+				03401DF522BAD2D8003A4AF8 /* TokenData.swift */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -251,6 +260,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				03A7CA8E22B7E12E00A45E2B /* ViewController.swift in Sources */,
+				03401DF422BAD299003A4AF8 /* DeviceInstallation.swift in Sources */,
+				03401DF222BAC914003A4AF8 /* PushTemplate.swift in Sources */,
 				CE00BE5822B9ACE400352783 /* DBService.swift in Sources */,
 				0330920E22B917F6002A7FC6 /* PhoneViewController.swift in Sources */,
 				0330921022B91CEE002A7FC6 /* SMSViewController.swift in Sources */,
@@ -259,6 +270,7 @@
 				0330921422B979C0002A7FC6 /* AddTodoViewController.swift in Sources */,
 				0331CE1B22BA7E7000D67FC9 /* OIDCViewController.swift in Sources */,
 				03A7CA8C22B7E12E00A45E2B /* AppDelegate.swift in Sources */,
+				03401DF622BAD2D8003A4AF8 /* TokenData.swift in Sources */,
 				03A7CA9E22B7EE8600A45E2B /* GeoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,9 @@
 import UIKit
 import AppAuth
 import UserNotifications
-import 
+
+
+let PUSH_FORMAT = "{\"aps\":{\"alert\":\"${message}\"}}"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -20,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var notificationHubNamespace: String?
     var notificationHubName: String?
     var notificationHubKeyName: String?
-    var notificationHubKey: String
+    var notificationHubKey: String?
     let tags = [1, 2, 3, 4, 5]
-    let genericTemplate = PushTemplate()
+    let genericTemplate = PushTemplate(withbody: PUSH_FORMAT)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -59,6 +61,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        if let path = Bundle.main.path(forResource: "devsettings", ofType: "plist") {
+            if let configValues = NSDictionary(contentsOfFile: path) {
+                self.notificationHubKey = configValues["notificationHubKey"] as! String
+                self.notificationHubKeyName = configValues["notificationHubKeyName"] as! String
+                self.notificationHubNamespace = configValues["notificationHubNamespace"] as! String
+                self.notificationHubName = configValues["notificationHubName"] as! String
+            }
+        }
+        
+        if #available(iOS 10.0, *) {
+            let notificationOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
+            UNUserNotificationCenter.current().delegate = self
+            UNUserNotificationCenter.current().requestAuthorization(options: notificationOptions, completionHandler: {(granted, error) in
+                if granted {
+                    DispatchQueue.main.async {
+                        application.registerForRemoteNotifications()
+                    }
+                }
+                })
+        }
+    }
+    
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let installationId = (UIDevice.current.identifierForVendor?.description)!
+        let pushChannel = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print("INSTALLATION ID : \(installationId)")
+        print("PUSH CHANNEL : \(pushChannel)")
+    }
+    
+    func showAlert(withText text : String) {
+        let alertController = UIAlertController(title: "PushDemo", message: text, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: nil))
+        self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        showAlert(withText: notification.request.content.body)
+    }
+    
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        showAlert(withText: response.notification.request.content.body)
+    }
 
 }
 
