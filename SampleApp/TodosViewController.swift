@@ -12,7 +12,7 @@ import SQLite3
 protocol Todo {
     var title:String { get set }
     var completed:Bool { get set }
-    var id:Int { get }
+    var id:Int { get set } // set for the sake of debugging
 }
 
 class TodosViewController: UITableViewController {
@@ -21,12 +21,10 @@ class TodosViewController: UITableViewController {
     var testTodos: [String] = []
     var todos:[Todo] = []
     var db: OpaquePointer?
-    var dbService:DBService
+    var dbService:DBService = DBService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testTodos = ["todo1", "todo2", "todo3"]
-        dbService = DBService()
         // Do any additional setup after loading the view.
     }
     
@@ -35,24 +33,14 @@ class TodosViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("DB count \(dbService.getCount())")
         return dbService.getCount()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text =  "yo" //todos[indexPath.row].title
+        cell.textLabel?.text =  todos[indexPath.row].title
         return cell
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

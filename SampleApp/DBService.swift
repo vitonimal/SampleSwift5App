@@ -9,6 +9,19 @@
 import Foundation
 import SQLite3
 
+
+class RetreivedTodo: Todo {
+    var id: Int
+    var title: String
+    var completed: Bool
+    
+    init(_ id:Int, _ title:String, _ completed:Bool) {
+        self.id = id
+        self.title = title
+        self.completed = completed
+    }
+}
+
 class DBService {
     
     var db:OpaquePointer?
@@ -35,8 +48,32 @@ class DBService {
     
     func getCount() -> Int {
         var queryStatement: OpaquePointer?
-        let query = "SELECT COUNT(*) FROM todos;"
-        return sqlite3_prepare(db, query, -1, &queryStatement, nil) == SQLITE_OK ? Int(sqlite3_column_int(queryStatement, 0)) : 0
+        let query = "SELECT COUNT(*) FROM todos"
+        
+        var count = 0
+        if sqlite3_prepare(self.db, query, -1, &queryStatement, nil) == SQLITE_OK{
+            while(sqlite3_step(queryStatement) == SQLITE_ROW) {
+                count = Int(sqlite3_column_int(queryStatement, 0))
+            }
+        }
+        
+        return count
+    }
+    
+    func get() -> [Todo] {
+        let query = "SELECT * FROM todos"
+        var queryStatement: OpaquePointer?
+        var results:[Todo] = []
+        if sqlite3_prepare(db, query, -1, &queryStatement, nil) == SQLITE_OK {
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                let id = Int(sqlite3_column_int(queryStatement, 0))
+                let title = String(sqlite3_column_int(queryStatement, 1))
+                let completed = sqlite3_column_int(queryStatement, 2) == 1
+                
+                results.append(RetreivedTodo(id, title, completed))
+            }
+        }
+        return results
     }
     
     func add(withTitle title:String?) {
@@ -56,6 +93,11 @@ class DBService {
             print("error binding query")
             return
         }
+        
+//        if sqlite3_bind_int(<#T##OpaquePointer!#>, <#T##Int32#>, <#T##Int32#>) != SQLITE_OK {
+//            print("error binding query")
+//            return
+//        }
         
         if sqlite3_step(stmt) == SQLITE_DONE {
             print("todo saved successfully")

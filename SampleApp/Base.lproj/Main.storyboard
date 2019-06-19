@@ -66,13 +66,14 @@
         <!--Todos-->
         <scene sceneID="rkA-4J-T29">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V4y-si-E3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="FK7-ph-gnF" customClass="TodosViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OuY-fL-cc8">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Wmn-Yh-eM8">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Wmn-Yh-eM8">
                                 <rect key="frame" x="0.0" y="28" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wmn-Yh-eM8" id="ON4-Gj-Dbn">
@@ -99,7 +100,6 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V4y-si-E3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-82.8125" y="81.4453125"/>
         </scene>
@@ -121,18 +121,18 @@
                                             <action selector="promptBiometrics:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1MD-LA-weO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2C9-oQ-ddD">
-                                        <rect key="frame" x="0.0" y="30" width="768" height="30"/>
-                                        <state key="normal" title="DB stuff"/>
-                                        <connections>
-                                            <segue destination="BSi-FL-yVA" kind="show" id="DLj-bU-T7h"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsI-RU-pV1">
-                                        <rect key="frame" x="0.0" y="60" width="768" height="30"/>
+                                        <rect key="frame" x="0.0" y="30" width="768" height="30"/>
                                         <state key="normal" title="Camera"/>
                                         <connections>
                                             <segue destination="g7a-Rm-H3f" kind="show" id="bZ1-SK-gpm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zd-bl-Izx">
+                                        <rect key="frame" x="0.0" y="60" width="768" height="30"/>
+                                        <state key="normal" title="DB"/>
+                                        <connections>
+                                            <segue destination="BSi-FL-yVA" kind="show" id="QoJ-Vx-vRw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aN-QD-tPW">
@@ -278,6 +278,9 @@
                                                 <rect key="frame" x="20" y="10" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="KdZ-T3-YfY"/>
+                                                </connections>
                                             </button>
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="hUp-Rl-aSX"/>
@@ -485,7 +488,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hUp-Rl-aSX"/>
-        <segue reference="HCu-ii-LPn"/>
+        <segue reference="QoJ-Vx-vRw"/>
+        <segue reference="MOf-k3-5em"/>
+        <segue reference="VOc-0z-fVG"/>
     </inferredMetricsTieBreakers>
 </document>

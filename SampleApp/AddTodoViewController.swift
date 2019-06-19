@@ -13,9 +13,10 @@ class AddTodoViewController: UIViewController {
     @IBOutlet weak var titleContent: UITextField!
     @IBOutlet weak var doneButton: UIButton!
     
+    var dbService:DBService = DBService()
 
     @IBAction func add(_ sender: Any) {
-        
+        dbService.add(withTitle: titleContent.text)
     }
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
