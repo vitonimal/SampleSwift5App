@@ -41,6 +41,7 @@ class TodosViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text =  todos[indexPath.row].title
+        print("\(indexPath.row) is the index of \( todos[indexPath.row].title)")
         return cell
     }
     
@@ -50,7 +51,7 @@ class TodosViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            print("to be deleted")
+            dbService.
         }
     }
 
