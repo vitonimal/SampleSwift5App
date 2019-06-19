@@ -8,12 +8,21 @@
 
 import UIKit
 import AppAuth
+import UserNotifications
+import 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     var currentAuthorizationFlow: OIDExternalUserAgentSession?
+    var configValues: NSDictionary?
+    var notificationHubNamespace: String?
+    var notificationHubName: String?
+    var notificationHubKeyName: String?
+    var notificationHubKey: String
+    let tags = [1, 2, 3, 4, 5]
+    let genericTemplate = PushTemplate()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

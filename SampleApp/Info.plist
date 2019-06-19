@@ -43,6 +43,10 @@
 	<string>This app will need to save photos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app will save media to your gallery</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
