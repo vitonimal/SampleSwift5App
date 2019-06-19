@@ -17,6 +17,7 @@
 		03401DF422BAD299003A4AF8 /* DeviceInstallation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03401DF322BAD299003A4AF8 /* DeviceInstallation.swift */; };
 		03401DF622BAD2D8003A4AF8 /* TokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03401DF522BAD2D8003A4AF8 /* TokenData.swift */; };
 		03401DF922BAD6A6003A4AF8 /* TokenUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03401DF822BAD6A6003A4AF8 /* TokenUtility.swift */; };
+		03401DFB22BAD75F003A4AF8 /* NotificationRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03401DFA22BAD75F003A4AF8 /* NotificationRegistrationService.swift */; };
 		03A7CA8C22B7E12E00A45E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7CA8B22B7E12E00A45E2B /* AppDelegate.swift */; };
 		03A7CA8E22B7E12E00A45E2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7CA8D22B7E12E00A45E2B /* ViewController.swift */; };
 		03A7CA9122B7E12E00A45E2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A7CA8F22B7E12E00A45E2B /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		03401DF522BAD2D8003A4AF8 /* TokenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenData.swift; sourceTree = "<group>"; };
 		03401DF722BAD415003A4AF8 /* CommonCryptoBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptoBridgingHeader.h; sourceTree = "<group>"; };
 		03401DF822BAD6A6003A4AF8 /* TokenUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtility.swift; sourceTree = "<group>"; };
+		03401DFA22BAD75F003A4AF8 /* NotificationRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRegistrationService.swift; sourceTree = "<group>"; };
 		03A7CA8822B7E12E00A45E2B /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03A7CA8B22B7E12E00A45E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03A7CA8D22B7E12E00A45E2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				03401DF522BAD2D8003A4AF8 /* TokenData.swift */,
 				03401DF722BAD415003A4AF8 /* CommonCryptoBridgingHeader.h */,
 				03401DF822BAD6A6003A4AF8 /* TokenUtility.swift */,
+				03401DFA22BAD75F003A4AF8 /* NotificationRegistrationService.swift */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				03A7CA8C22B7E12E00A45E2B /* AppDelegate.swift in Sources */,
 				03401DF622BAD2D8003A4AF8 /* TokenData.swift in Sources */,
 				03A7CA9E22B7EE8600A45E2B /* GeoViewController.swift in Sources */,
+				03401DFB22BAD75F003A4AF8 /* NotificationRegistrationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +438,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aaccuv-test.pushnotificationpocapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "'SampleApp/CommonCryptoBridgingHeader.h'";
+				SWIFT_OBJC_BRIDGING_HEADER = SampleApp/CommonCryptoBridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,7 +459,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aaccuv-test.pushnotificationpocapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "'SampleApp/CommonCryptoBridgingHeader.h'";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = SampleApp/CommonCryptoBridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

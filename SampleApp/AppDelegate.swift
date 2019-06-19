@@ -17,13 +17,14 @@ let PUSH_FORMAT = "{\"aps\":{\"alert\":\"${message}\"}}"
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
+    var registrationService : NotificationRegistrationService?
     var currentAuthorizationFlow: OIDExternalUserAgentSession?
     var configValues: NSDictionary?
     var notificationHubNamespace: String?
     var notificationHubName: String?
     var notificationHubKeyName: String?
     var notificationHubKey: String?
-    let tags = [1, 2, 3, 4, 5]
+    let tags = ["1", "2", "3", "4", "5"]
     let genericTemplate = PushTemplate(withbody: PUSH_FORMAT)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -90,6 +91,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let pushChannel = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         print("INSTALLATION ID : \(installationId)")
         print("PUSH CHANNEL : \(pushChannel)")
+        self.registrationService = NotificationRegistrationService(
+            withInstallationId: installationId,
+            andPushChannel: pushChannel,
+            andHubNamespace: notificationHubNamespace!,
+            andHubName: notificationHubName!,
+            andKeyName: notificationHubKeyName!,
+            andKey: notificationHubKey!)
+        self.registrationService!.register(withTags: tags, andTemplates: ["genericTemplate" : self.genericTemplate]) { (result) in
+            if !result {
+                print("Registration issue")
+            } else {
+                print("Registered")
+            }
+        }
     }
     
     func showAlert(withText text : String) {
