@@ -25,8 +25,13 @@ class TodosViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        todos = dbService.get()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        todos = dbService.get()
+        self.tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,14 +39,12 @@ class TodosViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("DB count \(dbService.getCount())")
         return dbService.getCount()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text =  todos[indexPath.row].title
-        print("\(indexPath.row) is the index of \( todos[indexPath.row].title)")
         return cell
     }
     
@@ -51,7 +54,7 @@ class TodosViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            dbService.
+//            dbService.
         }
     }
 
