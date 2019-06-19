@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>notificationHubNamespace</key>
+	<string>SomeNHXamarinVito</string>
+	<key>notificationHubName</key>
+	<string>SomeNHXamarin</string>
+	<key>notificationHubKeyName</key>
+	<string>DefaultFullSharedAccessSignature</string>
+	<key>notificationHubKey</key>
+	<string>bKCmtUhvzTOfkekXPLElXlrnApEXY6g568uLqyhaeRg=</string>
+</dict>
+</plist>

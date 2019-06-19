@@ -18,6 +18,17 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>https://accuvids4sit.azurewebsites.net</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -52,6 +63,18 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>clientId</key>
+	<string>js</string>
+	<key>issuer</key>
+	<string>https://accuvids4sit.azurewebsites.net</string>
+	<key>redirectUri</key>
+	<string>app</string>
+	<key>scopes</key>
+	<array>
+		<string>openid</string>
+		<string>profile</string>
+		<string>email</string>
 	</array>
 </dict>
 </plist>

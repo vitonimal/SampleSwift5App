@@ -66,7 +66,6 @@
         <!--Todos-->
         <scene sceneID="rkA-4J-T29">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V4y-si-E3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="FK7-ph-gnF" customClass="TodosViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OuY-fL-cc8">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -100,6 +99,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V4y-si-E3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-82.8125" y="81.4453125"/>
         </scene>
@@ -112,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9WA-Bs-MuI">
-                                <rect key="frame" x="0.0" y="422" width="768" height="180"/>
+                                <rect key="frame" x="0.0" y="407" width="768" height="210"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PJ-6X-BzB">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="30"/>
@@ -156,6 +156,13 @@
                                             <segue destination="oso-9L-81T" kind="show" id="L18-Dq-TMv"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1w3-1b-fD2">
+                                        <rect key="frame" x="0.0" y="180" width="768" height="30"/>
+                                        <state key="normal" title="OIDC"/>
+                                        <connections>
+                                            <segue destination="T4t-Fo-FTq" kind="show" id="XoI-W2-1gV"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -171,7 +178,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="785.15625" y="30.468749999999996"/>
+            <point key="canvasLocation" x="2050" y="-821"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="O34-0Z-Ot3">
+            <objects>
+                <viewController id="T4t-Fo-FTq" customClass="OIDCViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fWJ-Nw-x7C">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vei-i4-9FJ">
+                                <rect key="frame" x="26" y="122" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="tYm-cZ-rQr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yrG-zQ-Uxh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U3E-s0-Taf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2703" y="-820"/>
         </scene>
         <!--Geo View Controller-->
         <scene sceneID="geZ-6o-WsK">
@@ -488,8 +520,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QoJ-Vx-vRw"/>
-        <segue reference="MOf-k3-5em"/>
+        <segue reference="tYm-cZ-rQr"/>
         <segue reference="VOc-0z-fVG"/>
     </inferredMetricsTieBreakers>
 </document>
