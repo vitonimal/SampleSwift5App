@@ -25,6 +25,7 @@ class TodosViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        todos = dbService.get()
         // Do any additional setup after loading the view.
     }
     
@@ -41,6 +42,16 @@ class TodosViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text =  todos[indexPath.row].title
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            print("lol")
+        }
     }
 
 }

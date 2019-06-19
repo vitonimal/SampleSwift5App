@@ -60,6 +60,7 @@ class DBService {
         return count
     }
     
+    // BUG Title does not work
     func get() -> [Todo] {
         let query = "SELECT * FROM todos"
         var queryStatement: OpaquePointer?
@@ -67,9 +68,14 @@ class DBService {
         if sqlite3_prepare(db, query, -1, &queryStatement, nil) == SQLITE_OK {
             while sqlite3_step(queryStatement) == SQLITE_ROW {
                 let id = Int(sqlite3_column_int(queryStatement, 0))
-                let title = String(sqlite3_column_int(queryStatement, 1))
                 let completed = sqlite3_column_int(queryStatement, 2) == 1
-                
+                var title = ""
+                if let actualTitle = sqlite3_column_text(queryStatement, 1) {
+                    title = String(cString: actualTitle)
+                }
+                else {
+                    continue
+                }
                 results.append(RetreivedTodo(id, title, completed))
             }
         }
@@ -90,14 +96,14 @@ class DBService {
         }
         
         if sqlite3_bind_text(stmt, 1, todoTitle, -1, nil) != SQLITE_OK {
-            print("error binding query")
+            print("error binding query todoTitle")
             return
         }
         
-//        if sqlite3_bind_int(<#T##OpaquePointer!#>, <#T##Int32#>, <#T##Int32#>) != SQLITE_OK {
-//            print("error binding query")
-//            return
-//        }
+        if sqlite3_bind_int(stmt, 2, 0) != SQLITE_OK {
+            print("error binding query todoCompleted")
+            return
+        }
         
         if sqlite3_step(stmt) == SQLITE_DONE {
             print("todo saved successfully")
