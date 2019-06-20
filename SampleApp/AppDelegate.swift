@@ -11,7 +11,7 @@ import AppAuth
 import UserNotifications
 
 
-let PUSH_FORMAT = "{\"aps\":{\"alert\":\"${message}\"}}"
+let PUSH_FORMAT = "{\"aps\":{\"alert\":\"$(message)\"}}"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var notificationHubName: String?
     var notificationHubKeyName: String?
     var notificationHubKey: String?
-    let tags = ["1", "2", "3", "4", "5"]
+    let tags = ["12345"]
     let genericTemplate = PushTemplate(withbody: PUSH_FORMAT)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -100,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             andKey: notificationHubKey!)
         self.registrationService!.register(withTags: tags, andTemplates: ["genericTemplate" : self.genericTemplate]) { (result) in
             if !result {
-                print("Registration issue")
+                print("Registration issue") 
             } else {
                 print("Registered")
             }
