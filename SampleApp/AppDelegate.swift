@@ -28,7 +28,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let genericTemplate = PushTemplate(withbody: PUSH_FORMAT)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if let path = Bundle.main.path(forResource: "devsettings", ofType: "plist") {
+            if let configValues = NSDictionary(contentsOfFile: path) {
+                self.notificationHubKey = configValues["notificationHubKey"] as! String
+                self.notificationHubKeyName = configValues["notificationHubKeyName"] as! String
+                self.notificationHubNamespace = configValues["notificationHubNamespace"] as! String
+                self.notificationHubName = configValues["notificationHubName"] as! String
+                print("configured")
+            }
+        }
+        else {
+            print("Failed to read plist")
+        }
+        
+        if #available(iOS 10.0, *) {
+            let notificationOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
+            UNUserNotificationCenter.current().delegate = self
+            UNUserNotificationCenter.current().requestAuthorization(options: notificationOptions, completionHandler: {(granted, error) in
+                if granted {
+                    DispatchQueue.main.async {
+                        application.registerForRemoteNotifications()
+                    }
+                }
+            })
+        }
         return true
     }
     
@@ -60,29 +83,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-    func applicationDidFinishLaunching(_ application: UIApplication) {
-        if let path = Bundle.main.path(forResource: "devsettings", ofType: "plist") {
-            if let configValues = NSDictionary(contentsOfFile: path) {
-                self.notificationHubKey = configValues["notificationHubKey"] as! String
-                self.notificationHubKeyName = configValues["notificationHubKeyName"] as! String
-                self.notificationHubNamespace = configValues["notificationHubNamespace"] as! String
-                self.notificationHubName = configValues["notificationHubName"] as! String
-            }
-        }
-        
-        if #available(iOS 10.0, *) {
-            let notificationOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
-            UNUserNotificationCenter.current().delegate = self
-            UNUserNotificationCenter.current().requestAuthorization(options: notificationOptions, completionHandler: {(granted, error) in
-                if granted {
-                    DispatchQueue.main.async {
-                        application.registerForRemoteNotifications()
-                    }
-                }
-                })
-        }
     }
     
     

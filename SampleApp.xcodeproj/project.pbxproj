@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		0330921422B979C0002A7FC6 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330921322B979C0002A7FC6 /* AddTodoViewController.swift */; };
 		0330921622B97D89002A7FC6 /* TodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330921522B97D89002A7FC6 /* TodosViewController.swift */; };
 		0331CE1B22BA7E7000D67FC9 /* OIDCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0331CE1A22BA7E7000D67FC9 /* OIDCViewController.swift */; };
-		03401DF022BABC2F003A4AF8 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 03401DEF22BABC2F003A4AF8 /* SupportingFiles */; };
 		03401DF222BAC914003A4AF8 /* PushTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03401DF122BAC914003A4AF8 /* PushTemplate.swift */; };
 		03401DF422BAD299003A4AF8 /* DeviceInstallation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03401DF322BAD299003A4AF8 /* DeviceInstallation.swift */; };
 		03401DF622BAD2D8003A4AF8 /* TokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03401DF522BAD2D8003A4AF8 /* TokenData.swift */; };
@@ -28,6 +27,7 @@
 		03A7CAA322B80A5300A45E2B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7CAA222B80A5300A45E2B /* CameraViewController.swift */; };
 		1202030F0947E754F754F6BD /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3D9710C57535225D7ACE34 /* Pods_SampleApp.framework */; };
 		CE00BE5822B9ACE400352783 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00BE5722B9ACE400352783 /* DBService.swift */; };
+		CEF7868322BB1999003939D4 /* devsettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF7868222BB1999003939D4 /* devsettings.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,6 @@
 		0330921322B979C0002A7FC6 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 		0330921522B97D89002A7FC6 /* TodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewController.swift; sourceTree = "<group>"; };
 		0331CE1A22BA7E7000D67FC9 /* OIDCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OIDCViewController.swift; sourceTree = "<group>"; };
-		03401DEF22BABC2F003A4AF8 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		03401DF122BAC914003A4AF8 /* PushTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTemplate.swift; sourceTree = "<group>"; };
 		03401DF322BAD299003A4AF8 /* DeviceInstallation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInstallation.swift; sourceTree = "<group>"; };
 		03401DF522BAD2D8003A4AF8 /* TokenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenData.swift; sourceTree = "<group>"; };
@@ -56,6 +55,7 @@
 		03A7CAA022B7F0D800A45E2B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		03A7CAA222B80A5300A45E2B /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		CE00BE5722B9ACE400352783 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		CEF7868222BB1999003939D4 /* devsettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = devsettings.plist; sourceTree = "<group>"; };
 		EE7E7BCCC44A09512A0AC16F /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		FF3D9710C57535225D7ACE34 /* Pods_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,9 +102,9 @@
 				03A7CA8B22B7E12E00A45E2B /* AppDelegate.swift */,
 				03401DF122BAC914003A4AF8 /* PushTemplate.swift */,
 				03A7CA8D22B7E12E00A45E2B /* ViewController.swift */,
+				CEF7868222BB1999003939D4 /* devsettings.plist */,
 				03A7CA8F22B7E12E00A45E2B /* Main.storyboard */,
 				0330921522B97D89002A7FC6 /* TodosViewController.swift */,
-				03401DEF22BABC2F003A4AF8 /* SupportingFiles */,
 				03A7CA9222B7E12F00A45E2B /* Assets.xcassets */,
 				03A7CA9422B7E12F00A45E2B /* LaunchScreen.storyboard */,
 				0331CE1A22BA7E7000D67FC9 /* OIDCViewController.swift */,
@@ -207,7 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03A7CA9622B7E12F00A45E2B /* LaunchScreen.storyboard in Resources */,
-				03401DF022BABC2F003A4AF8 /* SupportingFiles in Resources */,
+				CEF7868322BB1999003939D4 /* devsettings.plist in Resources */,
 				03A7CA9322B7E12F00A45E2B /* Assets.xcassets in Resources */,
 				03A7CA9122B7E12E00A45E2B /* Main.storyboard in Resources */,
 			);
@@ -244,16 +244,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
