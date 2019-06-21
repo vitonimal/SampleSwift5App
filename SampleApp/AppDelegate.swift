@@ -100,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             andKey: notificationHubKey!)
         self.registrationService!.register(withTags: tags, andTemplates: ["genericTemplate" : self.genericTemplate]) { (result) in
             if !result {
-                print("Registration issue") 
+                print("Registration issue")
             } else {
                 print("Registered")
             }

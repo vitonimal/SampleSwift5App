@@ -28,6 +28,7 @@
 		1202030F0947E754F754F6BD /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3D9710C57535225D7ACE34 /* Pods_SampleApp.framework */; };
 		CE00BE5822B9ACE400352783 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00BE5722B9ACE400352783 /* DBService.swift */; };
 		CEF7868322BB1999003939D4 /* devsettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF7868222BB1999003939D4 /* devsettings.plist */; };
+		CEF7868522BB2FD2003939D4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7868422BB2FD2003939D4 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		03A7CAA222B80A5300A45E2B /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		CE00BE5722B9ACE400352783 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		CEF7868222BB1999003939D4 /* devsettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = devsettings.plist; sourceTree = "<group>"; };
+		CEF7868422BB2FD2003939D4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		EE7E7BCCC44A09512A0AC16F /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		FF3D9710C57535225D7ACE34 /* Pods_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 				03A7CA8B22B7E12E00A45E2B /* AppDelegate.swift */,
 				03401DF122BAC914003A4AF8 /* PushTemplate.swift */,
 				03A7CA8D22B7E12E00A45E2B /* ViewController.swift */,
+				CEF7868422BB2FD2003939D4 /* NetworkService.swift */,
 				CEF7868222BB1999003939D4 /* devsettings.plist */,
 				03A7CA8F22B7E12E00A45E2B /* Main.storyboard */,
 				0330921522B97D89002A7FC6 /* TodosViewController.swift */,
@@ -272,6 +275,7 @@
 				03A7CAA322B80A5300A45E2B /* CameraViewController.swift in Sources */,
 				0330921622B97D89002A7FC6 /* TodosViewController.swift in Sources */,
 				0330921422B979C0002A7FC6 /* AddTodoViewController.swift in Sources */,
+				CEF7868522BB2FD2003939D4 /* NetworkService.swift in Sources */,
 				0331CE1B22BA7E7000D67FC9 /* OIDCViewController.swift in Sources */,
 				03A7CA8C22B7E12E00A45E2B /* AppDelegate.swift in Sources */,
 				03401DF622BAD2D8003A4AF8 /* TokenData.swift in Sources */,
